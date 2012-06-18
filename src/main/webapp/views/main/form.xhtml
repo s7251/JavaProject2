@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <h:form id="bookform">
+        <h:panelGrid columns="3">
+
+            <h:outputText value="#{msg.bookName}" />
+            <h:inputText id="name" value="#{bookBean.book.name}" size="35">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="name" style="color:red" />
+
+            <h:outputText value="#{msg.regionName}" />
+            <h:inputText id="regionName" value="#{bookBean.book.regionName}" size="64" >
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="regionName" style="color:red" />
+            
+            <h:outputText value="#{msg.siteNumber}" />
+            <h:inputText id="siteNumber" value="#{bookBean.book.siteNumber}" size="10" />
+            <h:messages for="siteNumber" style="color:red" />
+        </h:panelGrid>
+
+        <h:commandButton value="#{msg.update}" action="#{bookBean.updateBook}" />
+    </h:form>
+</ui:composition>
